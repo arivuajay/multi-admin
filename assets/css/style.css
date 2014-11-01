@@ -8128,7 +8128,7 @@ input.input_type_filter, .th input {
     float: left;
     font-weight: 700;
     overflow: hidden;
-    padding: 11px 0 11px 30px;
+    padding: 8px 0 11px 30px;
     text-decoration: none;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -8159,8 +8159,8 @@ input.input_type_filter, .th input {
     width: 627px;
 }
 .site_selector1 .bywebsites .website_items_cont .website_cont {
-    border-bottom: 1px solid #d2d5d7;
-    border-right: 1px solid #d2d5d7;
+/*    border-bottom: 1px solid #d2d5d7;
+    border-right: 1px solid #d2d5d7;*/
     float: left;
     height: 34px;
     position: relative;
@@ -8274,7 +8274,7 @@ input.input_type_filter, .th input {
     cursor: default;
     float: left;
     overflow: hidden;
-    padding: 11px 0 11px 30px;
+    padding: 8px 0 11px 30px;
     text-decoration: none;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -8311,9 +8311,9 @@ input.input_type_filter, .th input {
     color: #555;
 }
 .site_selector1 .bywebsites .website_items_cont .website_cont.active {
-    background: none repeat scroll 0 0 #e0f5de;
+/*    background: none repeat scroll 0 0 #e0f5de;
     border-bottom: 1px solid #c9e0c7;
-    border-right: 1px solid #c9e0c7;
+    border-right: 1px solid #c9e0c7;*/
 }
 .site_selector1 .bywebsites .website_items_cont .website_cont.active a, #bottom_toolbar #bottom_sites_cont .list_cont .ind_sites.active a {
     background-position: 0 -102px !important;
