@@ -43,7 +43,7 @@
                 <tr class="odd">
                 <td class=" ">
                 <div class="label_updatee float-left">
-                <div class="label droid700 float-right"><?php echo $siteBackup['backupName']; ?></div>
+                <div class="label droid700 pull-right"><?php echo $siteBackup['backupName']; ?></div>
               </div>
                 </td>
                 <td class="">

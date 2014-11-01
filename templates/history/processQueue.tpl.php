@@ -8,7 +8,7 @@
 ?>
 
 <div class="tiles white">
-    <div class="site_bar_btn rep_sprite float-right tiles-body" style="margin-right:10px;">
+    <div class="site_bar_btn rep_sprite pull-right tiles-body" style="margin-right:10px;">
         <div class="controller"> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
         <div id="process_queue" class="<?php if ($d['showInProgress']) { ?> in_progress<?php } ?> historyToolbar tiles-title">Recent Activity</div>
         <br />
@@ -37,7 +37,7 @@
         <?php TPL::captureStart('processQueueRowSummary'); ?>
         <?php echo TPL::captureGet('processQueueRowSummary'); ?>
                     <div class="queue_ind_item historyItem <?php if (in_array($actionHistory['status'], array('pending', 'running', 'initiated', 'processingResponse', 'multiCallWaiting'))) { ?> in_progress<?php } echo ' ' . $actionOverallStatus; ?>" did="<?php echo $actionIDHTML; ?>"  actionID="<?php echo $actionID; ?>" onclick=""> <?php if ($actionHistory['status'] == 'multiCallWaiting') { ?>  <div class="rep_sprite btn_stop_rep_sprite" ><span class = "rep_sprite_backup btn_stop_progress stop_multicall"  mechanism = "multiCall" actionID = "<?php echo $actionID; ?>"></span> </div><?php } ?><div class="queue_ind_item_title"><?php $TPLPrepareHistoryBriefTitle = TPLPrepareHistoryBriefTitle($actionHistory);
-        echo $TPLPrepareHistoryBriefTitle; ?></div><div class="timestamp float-right"><?php echo @date(Reg::get('dateFormatLong'), $actionHistory['time']); ?></div>
+        echo $TPLPrepareHistoryBriefTitle; ?></div><div class="timestamp pull-right"><?php echo @date(Reg::get('dateFormatLong'), $actionHistory['time']); ?></div>
                         <div class="clear-both"></div>
                     </div>
         <?php TPL::captureStop('processQueueRowSummary'); ?>
@@ -45,7 +45,7 @@
                         <div class="message-wrapper">
                             <div class="heading"> <?php echo $TPLPrepareHistoryBriefTitle; ?> </div>
                             <div class="description">
-                                <a class="btn_send_report float-right droid400 sendReport" actionid="<?php echo $actionID; ?>">Report Issue</a>
+                                <a class="btn_send_report pull-right droid400 sendReport" actionid="<?php echo $actionID; ?>">Report Issue</a>
                             </div>
                         </div>
                         <div class="date pull-right"> <?php echo @date(Reg::get('dateFormatLong'), $actionHistory['time']); ?></div>

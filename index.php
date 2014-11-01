@@ -324,7 +324,7 @@ $min = '.min';
                     <div class="page-title">
                         <h3>Dashboard </h3>
                     </div>
-                    <div id="containeraa">
+                    <div id="container_top">
                         <div class="row 2col">
                             <div class="col-md-3 col-sm-6 spacing-bottom-sm spacing-bottom">
                                 <div class="tiles blue added-margin">
@@ -377,9 +377,11 @@ $min = '.min';
                                 </div>
                             </div>
                         </div>
+                    </div>
 
                         <div id="site_cont" class="row">
                             <div id="main_cont" class="col-xs-12 spacing-bottom"> 
+                                <div class="grid simple">
                                 <div class="tiles white">
                                     <div class="navbar">
                                         <div class="navbar-inner">
@@ -396,12 +398,12 @@ $min = '.min';
                                             </div>
                                         </div>
                                     </div>
+                                </div>
 
-                                    <div class="clear-both"></div>
-                                    <hr class="dotted" />
-                                    <div class="tiles white">
-                                        <!--<div class="tiles-title page_section_title">&nbsp;</div>-->
-                                        <div id="container" class="tiles-body">
+                                   <div class="grid-title">
+                                        <h4 class="page_section_title">Updates</h4>
+                                   </div>
+                                        <div id="container" class="grid-body">
                                             <div class="empty_data_set welcome">
                                                 <div class="line1">Hey there. Welcome to MultiAdmin WP.</div>
                                                 <div class="line2">Lets now manage WordPress, the MultiAdmin way!</div>
@@ -415,7 +417,6 @@ $min = '.min';
                                     </div>
                                 </div>
                             </div>
-                        </div>          
 
                         <div class="col-md-12 spacing-bottom">
                             <div class="row">
@@ -427,7 +428,6 @@ $min = '.min';
                 </div>
             </div>
             <!-- END CONTAINER -->
-        </div>
 
         <div id="bottom_toolbar" class="siteSearch">
             <!--<div id="activityPopup"> </div>-->

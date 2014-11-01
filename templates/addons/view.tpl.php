@@ -23,7 +23,7 @@ else{ ?>
   <div class="th rep_sprite">
     <div class="title"><span class="droid700">YOUR PURCHASED ADDONS</span></div>
     <div class="btn_reload rep_sprite" style=" width: 103px; float: left; margin: 7px;"><a class="rep_sprite_backup" <?php if(!$d['isAppRegistered']){ ?>register="no" actionvar="register"<?php } ?>  id="checkNowAddons"  style="width:62px;">Check Now</a></div>
-    <div class="btn_action float-right <?php if(empty($d['newAddons'])){ ?> disabled<?php } ?>"><a class="rep_sprite" id="installIWPAddons"  actionvar="installAddons">Install Addons</a></div>
+    <div class="btn_action pull-right <?php if(empty($d['newAddons'])){ ?> disabled<?php } ?>"><a class="rep_sprite" id="installIWPAddons"  actionvar="installAddons">Install Addons</a></div>
     
   </div>
   <div class="rows_cont" style="margin-bottom:-1px;">
@@ -56,7 +56,7 @@ else{ ?>
 	if(!empty($updateBulkAddons)){	
 	$updateBulkAddonsString = implode('__IWP__', $updateBulkAddons);
 	?>
-    <div class="btn_action float-right"><a class="rep_sprite updateIWPAddons" authlink="updateAddons&addons=<?php echo $updateBulkAddonsString ?>">Update All Addons</a></div>
+    <div class="btn_action pull-right"><a class="rep_sprite updateIWPAddons" authlink="updateAddons&addons=<?php echo $updateBulkAddonsString ?>">Update All Addons</a></div>
     <?php } ?>
   </div>
   <div class="rows_cont">
@@ -95,18 +95,18 @@ else{ ?>
             
             <?php if(!empty($addon['updateAvailable']) && !$addon['isValidityExpired']){ ?>			
 			
-             <div class="row_action float-right">
+             <div class="row_action pull-right">
         <a href="<?php echo $addon['updateAvailable']['changeLogLink']; ?>" target="_blank" style="padding-left: 5px;"><?php echo $addon['updateAvailable']['version']; ?></a>
         </div>
         <span style="float: right; padding-top: 10px;"> - </span>
-        <div class="row_action float-right">
+        <div class="row_action pull-right">
         	<a authlink="updateAddons&addon=<?php echo $addon['slug'].'__AD__'.$addon['updateAvailable']['version']; ?>" addonslug="<?php echo $addon['slug'].'__AD__'.$addon['updateAvailable']['version']; ?>" class="updateIWPAddons <?php if($addon['isValidityExpired']){ ?> disabled<?php }?>" style="padding-right: 5px;">Update</a></div>
                             
             <?php } 
 			
 			if((strtotime("+30 day", time()) >= $addon['validityExpires'])){ 
 			?>            
-            <div class="row_action float-right"><a href="http://arkinfotec.com/my-account/?utm_source=application&utm_medium=userapp&utm_campaign=renewAddon" target="_blank"><?php echo (!empty($addon['updateAvailable']) && $addon['isValidityExpired']) ? "Renew to update" : "Renew"; ?></a></div>
+            <div class="row_action pull-right"><a href="http://arkinfotec.com/my-account/?utm_source=application&utm_medium=userapp&utm_campaign=renewAddon" target="_blank"><?php echo (!empty($addon['updateAvailable']) && $addon['isValidityExpired']) ? "Renew to update" : "Renew"; ?></a></div>
             <?php }
 			
 			?>
