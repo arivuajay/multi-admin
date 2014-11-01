@@ -7908,6 +7908,7 @@ a{
     padding: 2px 12px;
 }
 
+
 ul.btn_rounded_gloss {
     border: 3px solid #eff0f2;
     border-radius: 20px;
@@ -7954,62 +7955,21 @@ ul.btn_rounded_gloss li a:hover {
 ul.btn_rounded_gloss li a.active:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.3);
 }
-ul.btn_radio_slelect {
-    border-radius: 20px;
-    margin: 7px 10px 0 0;
-    padding: 0;
+
+ul.btn_radio_slelect{
+    list-style: none;
+    margin-top: 8px;
 }
+
 ul.btn_radio_slelect li {
-    display: inline;
-    float: left;
+  float: left;
+  padding: 0;
 }
-ul.btn_radio_slelect li:first-child a {
-    border-radius: 3px 0 0 3px;
+
+ul.btn_radio_slelect li a{
+    border-radius: 0;
 }
-ul.btn_radio_slelect li:last-child a {
-    border-radius: 0 3px 3px 0;
-    margin-right: 0;
-}
-ul.btn_radio_slelect li a.actionButtonRounded {
-    border-radius: 3px;
-}
-ul.btn_radio_slelect li a {
-    -moz-user-select: none;
-    background-position: 0 -189px;
-    border: 1px solid #b7bbbe;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(255, 255, 255, 0.5) inset;
-    color: #676c70;
-    float: left;
-    height: 15px;
-    margin-right: -1px;
-    padding: 5px 11px 3px;
-    position: relative;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-}
-ul.btn_radio_slelect li a span.tooltip_backup_method {
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 3px;
-    color: #fff;
-    display: none;
-    line-height: 16px;
-    margin-left: -12px;
-    margin-top: 20px;
-    padding: 6px;
-    position: absolute;
-    text-shadow: none;
-    width: 176px;
-    z-index: 1;
-}
-ul.btn_radio_slelect li a.disabled_backup_mech, ul.btn_radio_slelect li a.disabled:hover {
-    background-color: #f9f9fa;
-    background-image: none;
-    border-color: #e5e6e8;
-    color: #cccdcf;
-    cursor: default;
-}
-ul.btn_radio_slelect li a.disabled_backup_mech:hover span.tooltip_backup_method {
-    display: block;
-}
+
 
 .site_selector1 .bygroup {
     border-right: 1px solid #d2d5d7;
@@ -8467,6 +8427,82 @@ div.datepicker {
     position: absolute;
     right: 10px;
     top: 0;
+}
+
+.optionsContent, .actionContent {
+    border: 1px solid #d2d5d7;
+    box-shadow: 0 3px 4px -3px #ddd;
+}
+.optionsContent.result_block_noborder {
+    border: 0 none;
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+}
+
+.ind_row_cont {
+    border-top: 1px solid #efefef;
+}
+.ind_row_cont:hover {
+    background-color: #ffffec;
+}
+.ind_row_cont .row_summary, .ind_row_cont .row_detailed .rh {
+    cursor: pointer;
+}
+.ind_row_cont.active {
+    background-color: #e0f5de;
+    border-bottom: 1px solid #cce5c9;
+    border-top: 1px solid #cce5c9;
+    margin-bottom: -1px;
+}
+.ind_row_cont:first-child {
+    border-top: 0 none;
+}
+.ind_row_cont.active .row_summary > div {
+    border-left: 1px solid #cce5c9;
+    float: left;
+}
+.ind_row_cont.active .row_summary div:first-child {
+    border-left: 0 none;
+}
+.row_summary > div, .row_no_summary > div {
+    border-left: 1px solid #efefef;
+    float: left;
+}
+.row_summary div:first-child {
+    border-left: 0 none;
+}
+.row_summary.active {
+    background-color: #e0f5de;
+    border-bottom: 1px solid #cce5c9;
+    border-top: 1px solid #cce5c9;
+    margin-bottom: -1px;
+}
+.row_summary.active > div {
+    border-left: 1px solid #cce5c9;
+}
+.row_arrow {
+    background: url("../images/arrows.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 34px;
+    width: 34px;
+}
+.row_arrow.active {
+    background-position: 0 -34px;
+}
+.row_checkbox {
+    background: url("../images/checkbox_sprite.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 34px;
+    width: 34px;
+}
+.ind_row_cont.active .rh .row_checkbox, .ind_row_cont.active .row_summary .row_checkbox {
+    background-position: 0 -102px;
+}
+
+
+.clear-both {
+    clear: both;
+    float: none !important;
+    height: 0;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 
