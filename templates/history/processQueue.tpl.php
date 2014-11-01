@@ -142,10 +142,12 @@
 }
 ?>
             <div class="queue_list">
+            
                 <div class="th rep_sprite">
                     <div class="title droid700">PROCESS QUEUE</div><div class="float-left" id="historyQueueUpdateLoading"></div>
                     <div class="history"><a class="navLinks" page="history">View Activity Log</a></div>
                 </div>
+                
                 <div class="queue_ind_item_cont nano">
                     <div class="content">
 <?php echo TPL::captureGet('processQueueRowSummary'); ?>

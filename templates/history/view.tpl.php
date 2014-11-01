@@ -23,22 +23,55 @@ foreach($d['actionsHistoryData'] as $actionID => $actionHistory){
 <div class="ind_row_cont" actionID="<?php echo $actionID; ?>">
 	<div class="row_summary<?php if(in_array($actionHistory['status'], array('pending', 'running', 'initiated', 'multiCallWaiting'))){ ?> in_progress<?php } ?>"><?php if($actionHistory['status'] == 'multiCallWaiting'){ ?> <div class="rep_sprite btn_stop_rep_sprite_activity_log" ><span class = "rep_sprite_backup btn_stop_progress stop_multicall"  mechanism = "multiCall" actionID = "<?php echo $actionID; ?>"></span> </div><?php } ?>
       <div class="row_arrow"></div>
+      <table class="table table-bordered no-more-tables">
+      <thead>
+               <tr>
+               <th class="text-center">
       <div class="timestamp"><?php echo @date(Reg::get('dateFormatLong'), $actionHistory['time']); ?></div>
+      </th>
+      <th class="text-center">
       <div class="row_name"><?php echo TPLPrepareHistoryBriefTitle($actionHistory); ?></div>
+      </th>
+      <th class="text-center">
       <?php if($actionHistory['statusSummary']['success']) { ?><div class="success_bu rep_sprite_backup"><?php echo $actionHistory['statusSummary']['success']; ?></div><?php } ?>
       <?php if($errorCount = ($actionHistory['statusSummary']['error'] + $actionHistory['statusSummary']['netError'])) { ?><div class="failed_bu rep_sprite_backup"><?php echo $errorCount; ?></div><?php } ?>
+      </th>
+      </tr>
+      </thead>
+      </table>
       <div class="clear-both"></div>
     </div>
               <div class="row_detailed" style="display:none;">
+              
             <div class="rh <?php if(in_array($actionHistory['status'], array('pending', 'running', 'initiated', 'processingResponse', 'multiCallWaiting'))){ ?> in_progress<?php } ?>">
+            
                   <div class="row_arrow"></div>
+                  <table id="emails" class="table table-striped table-fixed-layout table-hover">
+            <thead>
+            <tr>
+                  <th class="text-center">
                   <div class="timestamp"><?php echo @date(Reg::get('dateFormatLong'), $actionHistory['time']); ?></div>
-                  <a class="btn_send_report float-right droid400 sendReport" actionid="<?php echo $actionID; ?>">Report Issue</a>
+                  </th>
+                  
+                  <th class="text-center">
                   <div class="row_name"><?php echo TPLPrepareHistoryBriefTitle($actionHistory); ?></div>
+                  </th>
+                  
+                  <th class="text-center">
                   <?php if($actionHistory['statusSummary']['success']) { ?><div class="success_bu rep_sprite_backup"><?php echo $actionHistory['statusSummary']['success']; ?></div><?php } ?>
                   <?php if($errorCount = ($actionHistory['statusSummary']['error'] + $actionHistory['statusSummary']['netError'])) { ?><div class="failed_bu rep_sprite_backup"><?php echo $errorCount; ?></div><?php } ?>
+                  </th>
+                  
+                  <th class="text-center">
+                  <a class="btn_send_report float-right droid400 sendReport" actionid="<?php echo $actionID; ?>">Report Issue</a>
+                  </th>
+                  
+                  </tr>
+                  </thead>
+                </table>
                   <div class="clear-both"></div>
                 </div>
+                
             <div class="rd">
             
 <!--            -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
