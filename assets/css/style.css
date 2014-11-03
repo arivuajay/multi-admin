@@ -7777,9 +7777,9 @@ z-index: 999;
 .item_ind.active .row_checkbox {
     background-position: 0 -102px;
 }
-.item_ind .item {
+/*.item_ind .item {
    line-height: 34px;
-}
+}*/
 
 .backup_checkbox, .checkbox {
     background: url("../images/checkbox_sprite.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
@@ -7966,7 +7966,7 @@ ul.btn_radio_slelect li {
   padding: 0;
 }
 
-ul.btn_radio_slelect li a{
+ul.btn_radio_slelect li a.manage_websites_view,ul.btn_radio_slelect li a.manage_plugins_view{
     border-radius: 0;
 }
 
@@ -8505,5 +8505,45 @@ div.datepicker {
     padding: 0 !important;
 }
 
+.ind_row_cont {
+  float: left;
+  width: 100%;
+}
 
+.actionContent {
+  border: 1px solid #d2d5d7;
+  box-shadow: 0 3px 4px -3px #ddd;
+  float: left;
+  width: 100%;
+}
+
+.row_detailed .row_arrow{
+    float:left;
+}
+.row_summary .row_name, .row_summary .timestamp {
+  line-height: 34px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.row_detailed .rd {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.row_detailed .rd .count {
+  margin: 0 20px;
+}
+
+.row_detailed .rd .items_cont .select_operation{
+    float:right;
+}
+
+.row_detailed .rd .items_cont .select_operation ul li{
+    margin-right: 5px;
+}
+
+.row_detailed .rd .items_cont .select_operation .btn_radio_slelect {
+  margin-top: 0;
+}
 
