@@ -8441,8 +8441,10 @@ div.datepicker {
     border-top: 1px solid #efefef;
 }
 .ind_row_cont:hover {
-    background-color: #ffffec;
+
+    background-color: #e7e7e7;
 }
+
 .ind_row_cont .row_summary, .ind_row_cont .row_detailed .rh {
     cursor: pointer;
 }
@@ -8568,5 +8570,4 @@ width: 100%;
 #historyPageContent .row_detailed .rd .row_updatee_ind .label_updatee{
     width: 20%;
 }
-
 
