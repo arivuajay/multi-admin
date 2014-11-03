@@ -8551,7 +8551,7 @@ div.datepicker {
     margin-top: 0;
 }
 
-#historyPageContent .row_detailed .field{
+.row_detailed .field{
     float:left;
     line-height: 34px;
     padding-left: 10px;
@@ -8571,3 +8571,57 @@ width: 100%;
     width: 20%;
 }
 
+#view_content .row_detailed .rd .items_cont {
+  margin-left: 15%;
+  width: 86%;
+}
+
+#view_content .row_detailed .rd .item_ind {
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+#backupPageMainCont{
+    float: left;
+    width: 100%;
+}
+
+.backup .row_detailed .rd .row_updatee_ind.del .items_cont .item_ind .row_backup_action .del_conf, .view_backup .item_ind.del .del_conf, .backup .row_summary.del .del_conf, .backup .row_detailed.del .rh .del_conf, .row_updatee_ind .items_cont .item_ind.del .row_backup_action .del_conf {
+  display: block !important;
+  margin-right: 7px;
+  width: 119px;
+}
+.del_conf {
+  background: none repeat scroll 0 0 #efdede;
+  opacity: 0.9;
+  position: absolute;
+  right: 27px;
+  top: 5px;
+}
+.backup .row_detailed .rd .row_updatee_ind .label_updatee {
+  width: 218px;
+}
+.backup .row_detailed .rd .row_updatee_ind .label_updatee .label {
+  background: none;
+  text-transform: none;
+  width: 185px;
+}
+.backup .row_detailed .rd .row_updatee_ind .items_cont div.stats {
+  float: left;
+  height: 10px;
+  padding: 12px 15px 12px 32px;
+}
+.backup .row_detailed .rd .row_updatee_ind .items_cont, .backup .row_detailed .rd .row_updatee_ind .items_cont .item_ind {
+  width: 706px;
+}
+.backup .row_detailed .rd .row_updatee_ind .items_cont div.stats.repository {
+  width: 80px;
+}
+.backup .row_detailed .rd .row_updatee_ind .items_cont div.stats.files {
+  width: 70px;
+}
+.backup .row_detailed .rd .row_updatee_ind .items_cont div.stats.size {
+  width: 80px;
+}

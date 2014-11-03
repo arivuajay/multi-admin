@@ -19,7 +19,7 @@
       <div class="row_summary">
       	<?php TPL::captureStart('sitesBackupsRowSummary'); ?>
         <div class="row_arrow"></div>
-        <div class="row_name searchable"><a href="javascript:void(0)" style="margin-left:12px;margin-top:10px;"><?php echo $sitesData[$siteID]['name'] ?></a></div>
+        <div class="row_name searchable"><?php echo $sitesData[$siteID]['name'] ?></div>
         <div class="clear-both"></div>
         <?php TPL::captureStop('sitesBackupsRowSummary'); ?>
         <?php echo TPL::captureGet('sitesBackupsRowSummary'); ?>
@@ -37,46 +37,30 @@
 					echo TPL::captureGet('oldBackups');
 				}
 				foreach($siteBackups as $siteBackup){ ?>
-                
-                <table id="example" class="table table-hover table-condensed dataTable" aria-describedby="example_info">
-                <tbody role="alert" aria-live="polite" aria-relevant="all">
-                <tr class="odd">
-                <td class=" ">
-                <div class="label_updatee float-left">
-                <div class="label droid700 pull-right"><?php echo $siteBackup['backupName']; ?></div>
+            <div class="row_updatee_ind topBackup">
+              <div class="label_updatee pull-left">
+                <div class="droid700 pull-right label"><span class="badge badge-info p-l-10"><?php echo (!empty($siteBackup['backupName'])) ? $siteBackup['backupName'] : 'No name'; ?> </span></div>
               </div>
-                </td>
-                <td class="">
-                <div class="rep_sprite_backup stats repository delConfHide"><?php if(!empty($siteBackup['repository'])){ echo $siteBackup['repository']; } else { echo "Server"; }?></div>
-                </td>
-                <td class=" sorting_1">
-                <div class="rep_sprite_backup stats files delConfHide"><?php if($siteBackup['what'] == 'full'){ ?>Files + DB<?php } elseif($siteBackup['what'] == 'db'){ ?>DB<?php } elseif($siteBackup['what'] == 'files'){ ?>Files<?php } ?></div>
-                </td>
-                 <td class="">
-                 <div class="rep_sprite_backup stats size delConfHide"><?php echo $siteBackup['size']; ?></div>
-                 </td>
-                 <td class="">
-                 <div class="rep_sprite_backup stats time delConfHide"><?php echo @date(Reg::get('dateFormatLong'), $siteBackup['time']); ?></div>
-                 </td>
-                 <td class="">
-                 <div class="row_backup_action rep_sprite" style="float:right;">
-                  	<a class="trash rep_sprite_backup removeBackup" sid="<?php echo $siteBackup['siteID']; ?>" taskName="<?php echo $siteBackup['data']['scheduleKey']; ?>" referencekey="<?php echo $siteBackup['referenceKey']; ?>"></a>
+              <div class="items_cont pull-left">
+                <div class="item_ind pull-left">
+                  <div class="rep_sprite_backup stats repository delConfHide"><?php if(!empty($siteBackup['repository'])){ echo $siteBackup['repository']; } else { echo "Server"; }?></div>
+                  <div class="rep_sprite_backup stats files delConfHide"><?php if($siteBackup['what'] == 'full'){ ?>Files + DB<?php } elseif($siteBackup['what'] == 'db'){ ?>DB<?php } elseif($siteBackup['what'] == 'files'){ ?>Files<?php } ?></div>
+                  <div class="rep_sprite_backup stats size delConfHide"><?php echo $siteBackup['size']; ?></div>
+                  <div class="rep_sprite_backup stats time delConfHide"><?php echo @date(Reg::get('dateFormatLong'), $siteBackup['time']); ?></div>
+                  <div class="row_backup_action rep_sprite" style="float:right;">
+                  	<a class="trash rep_sprite_backup removeBackup" sid="<?php echo $siteBackup['siteID']; ?>" taskName="<?php echo $siteBackup['data']['scheduleKey']; ?>" referencekey="<?php echo $siteBackup['referenceKey']; ?>">Delete</a>
                     <div class="del_conf" style="display:none;">
                       <div class="label">Sure?</div>
                       <div class="yes deleteBackup">Yes</div>
                       <div class="no deleteBackup">No</div>
                     </div>
                   </div>
-                  </td>
-                  <td class="">
-                    <?php if(!empty($siteBackup['downloadURL'])){ if(!is_array($siteBackup['downloadURL'])) {$urlArray = array(); $urlArray[] = $siteBackup['downloadURL'];}else { $urlArray = $siteBackup['downloadURL']; } $urlIndex = count($urlArray)-1; ?> <div class="row_backup_action rep_sprite delConfHide" style="float:right;"><a class="download rep_sprite_backup" href="<?php echo $urlArray[$urlIndex]; ?>">Download</a></div> <?php } ?>
-                  </td>
-                  
-                  <td class="">
-                  <div class="row_action float-left delConfHide"><a href="javascript:void(0)" class="restoreBackup needConfirm"  sid="<?php echo $siteBackup['siteID']; ?>" taskName="<?php echo $siteBackup['data']['scheduleKey']; ?>" referencekey="<?php echo $siteBackup['referenceKey']; ?>">Restore</a></div>
-                  </td>
-                  </tr></tbody></table>
-           
+                <?php if(!empty($siteBackup['downloadURL'])){ if(!is_array($siteBackup['downloadURL'])) {$urlArray = array(); $urlArray[] = $siteBackup['downloadURL'];}else { $urlArray = $siteBackup['downloadURL']; } $urlIndex = count($urlArray)-1; ?> <div class="row_backup_action rep_sprite delConfHide" style="float:right;"><a class="download rep_sprite_backup" href="<?php echo $urlArray[$urlIndex]; ?>">Download</a></div> <?php } ?>
+                  <div class="row_action pull-left delConfHide"><a class="restoreBackup needConfirm"  sid="<?php echo $siteBackup['siteID']; ?>" taskName="<?php echo $siteBackup['data']['scheduleKey']; ?>" referencekey="<?php echo $siteBackup['referenceKey']; ?>">Restore</a></div>
+                </div>
+              </div>
+              <div class="clear-both"></div>
+            </div> 
             <?php }//end foreach($siteBackups as $siteBackup)
 			
 				if($key != 'backupNow'){
