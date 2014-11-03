@@ -23,25 +23,55 @@ foreach($d['actionsHistoryData'] as $actionID => $actionHistory){
 <div class="ind_row_cont" actionID="<?php echo $actionID; ?>">
 	<div class="row_summary<?php if(in_array($actionHistory['status'], array('pending', 'running', 'initiated', 'multiCallWaiting'))){ ?> in_progress<?php } ?>"><?php if($actionHistory['status'] == 'multiCallWaiting'){ ?> <div class="rep_sprite btn_stop_rep_sprite_activity_log" ><span class = "rep_sprite_backup btn_stop_progress stop_multicall"  mechanism = "multiCall" actionID = "<?php echo $actionID; ?>"></span> </div><?php } ?>
       <div class="row_arrow"></div>
-      <div class="timestamp field"><?php echo @date(Reg::get('dateFormatLong'), $actionHistory['time']); ?></div>
-      <div class="row_name field"><?php echo TPLPrepareHistoryBriefTitle($actionHistory); ?></div>
-      <?php if($actionHistory['statusSummary']['success']) { ?><div class="success_bu rep_sprite_backup"><i class="text-success fa fa-check-circle "></i>&nbsp;<?php echo $actionHistory['statusSummary']['success']; ?></div><?php } ?>
-      <?php if($errorCount = ($actionHistory['statusSummary']['error'] + $actionHistory['statusSummary']['netError'])) { ?><div class="failed_bu rep_sprite_backup"><i class="text-warning fa fa-check-circle "></i>&nbsp;<?php echo $errorCount; ?></div><?php } ?>
+      <table class="table table-bordered no-more-tables">
+      <thead>
+               <tr>
+               <th class="text-center">
+      <div class="timestamp"><?php echo @date(Reg::get('dateFormatLong'), $actionHistory['time']); ?></div>
+      </th>
+      <th class="text-center">
+      <div class="row_name"><?php echo TPLPrepareHistoryBriefTitle($actionHistory); ?></div>
+      </th>
+      <th class="text-center">
+      <?php if($actionHistory['statusSummary']['success']) { ?><div class="success_bu rep_sprite_backup"><?php echo $actionHistory['statusSummary']['success']; ?></div><?php } ?>
+      <?php if($errorCount = ($actionHistory['statusSummary']['error'] + $actionHistory['statusSummary']['netError'])) { ?><div class="failed_bu rep_sprite_backup"><?php echo $errorCount; ?></div><?php } ?>
+      </th>
+      </tr>
+      </thead>
+      </table>
       <div class="clear-both"></div>
     </div>
               <div class="row_detailed" style="display:none;">
+              
             <div class="rh <?php if(in_array($actionHistory['status'], array('pending', 'running', 'initiated', 'processingResponse', 'multiCallWaiting'))){ ?> in_progress<?php } ?>">
+            
                   <div class="row_arrow"></div>
-                  <div class="timestamp field"><?php echo @date(Reg::get('dateFormatLong'), $actionHistory['time']); ?></div>
-                  <div class="row_name field"><?php echo TPLPrepareHistoryBriefTitle($actionHistory); ?></div>
-                  <div class="row_counts field">
-                  <?php if($actionHistory['statusSummary']['success']) { ?><div class="success_bu rep_sprite_backup"><i class="text-success fa fa-check-circle "></i>&nbsp;<?php echo $actionHistory['statusSummary']['success']; ?></div><?php } ?>
-                  <?php if($errorCount = ($actionHistory['statusSummary']['error'] + $actionHistory['statusSummary']['netError'])) { ?><div class="failed_bu rep_sprite_backup"><i class="text-warning fa fa-check-circle "></i>&nbsp;<?php echo $errorCount; ?></div><?php } ?>
-                  </div>
-                  <div class="row_actions field">
+                  <table id="emails" class="table table-striped table-fixed-layout table-hover">
+            <thead>
+            <tr>
+                  <th class="text-center">
+                  <div class="timestamp"><?php echo @date(Reg::get('dateFormatLong'), $actionHistory['time']); ?></div>
+                  </th>
+                  
+                  <th class="text-center">
+                  <div class="row_name"><?php echo TPLPrepareHistoryBriefTitle($actionHistory); ?></div>
+                  </th>
+                  
+                  <th class="text-center">
+                  <?php if($actionHistory['statusSummary']['success']) { ?><div class="success_bu rep_sprite_backup"><?php echo $actionHistory['statusSummary']['success']; ?></div><?php } ?>
+                  <?php if($errorCount = ($actionHistory['statusSummary']['error'] + $actionHistory['statusSummary']['netError'])) { ?><div class="failed_bu rep_sprite_backup"><?php echo $errorCount; ?></div><?php } ?>
+                  </th>
+                  
+                  <th class="text-center">
                   <a class="btn_send_report float-right droid400 sendReport" actionid="<?php echo $actionID; ?>">Report Issue</a>
-                  </div>
+                  </th>
+                  
+                  </tr>
+                  </thead>
+                </table>
+                  <div class="clear-both"></div>
                 </div>
+                
             <div class="rd">
             
 <!--            -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
@@ -85,19 +115,19 @@ foreach($actionHistory['detailedStatus'] as $singleAction){
  <!--           For each Site starts-->
                   <div class="row_updatee">
                 <div class="row_updatee_ind">
-                      <div class="label_updatee pull-left  field">
-                    <div class="label droid700"><?php if(!empty($siteWithErrors[$siteID])){ ?><a style="float:left; position:absolute; left:0; bottom:2px;" class="moreInfo" historyID="<?php echo $siteWithErrors[$siteID]; ?>">View site response</a><?php unset($siteWithErrors[$siteID]); } ?><?php echo $sitesDataTemp[$siteID]['name']; ?></div>
+                      <div class="label_updatee">
+                    <div class="label droid700 float-left"><?php if(!empty($siteWithErrors[$siteID])){ ?><a style="float:left; position:absolute; left:0; bottom:2px;" class="moreInfo" historyID="<?php echo $siteWithErrors[$siteID]; ?>">View site response</a><?php unset($siteWithErrors[$siteID]); } ?><?php echo $sitesDataTemp[$siteID]['name']; ?></div>
                     <div class="clear-both"></div>
                   </div>
                       <div class="item_cont_right_cont">                      
        <?php foreach($siteGroupedActions as $detailedAction => $statusGroupedActions){ ?>     
                     <!--  For each type starts-->                   
                     <div class="item_cont">
-                        <?php if($showByDetailedActionGroup){ ?><div class="item_label pull-left"><span><?php echo ($detailedAction == 'core') ? 'WP' : $detailedAction; ?></span></div><?php } ?>
-                        <div class="pull-left">                        
+                        <?php if($showByDetailedActionGroup){ ?><div class="item_label float-left"><span><?php echo ($detailedAction == 'core') ? 'WP' : $detailedAction; ?></span></div><?php } ?>
+                        <div class="float-left">                        
                         <?php if(!empty($statusGroupedActions['success'])){ ?> 
-                        <div class="item_success rep_sprite_backup pull-left">                    
-                            <i class="fa fa-check-circle text-success">&nbsp;</i>   
+                        <div class="item_success rep_sprite_backup float-left">                    
+                            
                         <!--For each plugins successful plugins starts-->                        
                         <?php if($showByDetailedActionGroup){ echo '<span>'.implode('</span> <span>',$statusGroupedActions['success']).'</span>'; }
 						else{ ?><span>&nbsp;</span><?php } ?>
@@ -105,7 +135,7 @@ foreach($actionHistory['detailedStatus'] as $singleAction){
                         </div>
                         <?php } ?>
                         <?php if(!empty($statusGroupedActions['others'])){ ?>
-                        <div class="item_failure rep_sprite_backup pull-left">
+                        <div class="item_failure rep_sprite_backup float-left">
 							  <?php foreach($statusGroupedActions['others'] as $oneAction){ ?>
                               <!--For each plugins failed plugins starts-->
                               <?php if($showByDetailedActionGroup){ ?><div class="failure_name"><?php echo $oneAction['name']; ?></div><?php } ?>
@@ -117,8 +147,7 @@ foreach($actionHistory['detailedStatus'] as $singleAction){
                         <?php } ?>
                         <?php if(!empty($statusGroupedActions['error'])){ ?> 
                         
-                        <div class="item_failure rep_sprite_backup pull-left">
-                            <i class="fa fa-check-circle text-warning">&nbsp;</i>   
+                        <div class="item_failure rep_sprite_backup float-left">
                         	 <?php foreach($statusGroupedActions['error'] as $oneAction){ ?>
                         	  <!--For each plugins failed plugins starts-->
                               <?php if($showByDetailedActionGroup){ ?><div class="failure_name"><?php echo $oneAction['name']; ?></div><?php } ?>
