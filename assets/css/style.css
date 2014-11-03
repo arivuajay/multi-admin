@@ -4112,7 +4112,7 @@ form legend,
 }
 .datepicker th,
 .datepicker td {
-    padding: 5.5px !important;
+     padding: 0.8px !important;
 }
 .datepicker table tr td.old,
 .datepicker table tr td.new {
@@ -8339,8 +8339,8 @@ input.input_type_filter, .th input {
     color: #676e75;
     font-size: 11px;
     font-weight: 700;
-    height: 18px;
-    padding-top: 7px;
+    height: 25px;
+    padding-top: 5px;
     width: 25px;
 }
 #historyPagination .paginator_p_wrap .paginator_p:last-child {
@@ -8354,8 +8354,7 @@ input.input_type_filter, .th input {
 #historyPagination .paginator_p_wrap .paginator_p.selected {
     background-position: 0 -716px;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.1) inset;
-    height: 17px;
-    padding-top: 8px;
+
 }
 #historyPagination .paginator_p_wrap .paginator_p.selected:hover {
     color: #676e75;
