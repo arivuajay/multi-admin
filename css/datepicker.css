@@ -101,7 +101,7 @@ thead tr th.datepickerGoPrev a:hover, thead tr th.datepickerGoNext a:hover, thea
 .datepickerViewDays thead tr.datepickerDoW { background:#e3e6e8; }
 .datepickerViewDays thead tr.datepickerDoW th { border-top:1px solid #a6aaae;}
 .datepickerViewDays thead tr.datepickerDoW th span { font-size:10px; color:#525556; padding:2px 5px 4px; float:left; text-align:center;}
-.datepickerWeek a { font-size: 10px; color: #83878b !important; padding: 4px 2px 5px 2px; float: left; text-align: center; background: #E0E2E5; border-top: 1px solid #CCCED0; height: 13px !important; width: 19px !important; border-right: 1px solid #CCCED0;}
+.datepickerWeek a { font-size: 10px; color: #83878b !important; padding: 4px 2px 5px 2px; float: left; text-align: center; background: #E0E2E5; border-top: 1px solid #CCCED0; height: 22px !important; width: 19px !important; border-right: 1px solid #CCCED0;}
 .datepickerWeek a:hover { background:#c2c6cb; }
 div.datepicker a {
 	color: #676c70;

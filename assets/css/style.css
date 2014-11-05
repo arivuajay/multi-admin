@@ -4110,7 +4110,7 @@ form legend,
 .datepicker table tr td span {
     border-radius: 4px 4px 4px 4px;
 }
-.datepicker th,
+
 .datepicker td {
      padding: 0.8px !important;
 }
@@ -8381,7 +8381,7 @@ input.input_type_filter, .th input {
     float: left;
 }
 .history #widget #widgetCalendar {
-    margin: 31px 5px 0 8px;
+    margin: 31px 5px 0 -9px;
     overflow: hidden;
     position: absolute;
 }
@@ -8412,11 +8412,11 @@ div.datepicker {
     cursor: default;
     display: none;
     font-size: 12px;
-    height: 178px !important;
+    height: 190px !important;
     left: 0;
     position: relative;
     top: 0;
-    width: 204px !important;
+    width: 210px !important;
     z-index: 1;
 }
 
